@@ -15,6 +15,9 @@
  */
 function logNames(items) {
   // TODO: use `forEach`
+  items.forEach(item => {
+    console.log(item.name);
+  });
 }
 
 /**
@@ -23,6 +26,7 @@ function logNames(items) {
  */
 function getUppercaseNames(items) {
   // TODO: use `map`
+  return items.map(item => item.name.toUpperCase());
 }
 
 /**
@@ -32,6 +36,7 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  return items.find(item => item.id === id);
 }
 
 /**
@@ -41,6 +46,13 @@ function getItemById(items, id) {
  */
 function getItemPriceByName(items, name) {
   // TODO: use a loop!
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].name === name) {
+      return items[i].price;
+    }
+  }
+  // If no match is found, return undefined or a default value
+  return undefined;
 }
 
 /**
@@ -50,6 +62,7 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  return items.filter(item => item.category === category);
 }
 
 /**
@@ -58,6 +71,7 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+  return items.reduce((total, item) => total + item.quantity, 0);
 }
 
 /**
@@ -66,6 +80,7 @@ function countItems(items) {
  */
 function calculateTotalPrice(items) {
   // TODO: use `reduce`
+  return items.reduce((total, item) => total + (item.price * item.quantity), 0);
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
